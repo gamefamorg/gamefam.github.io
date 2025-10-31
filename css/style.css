@@ -39,6 +39,35 @@ h1 {
     font-size: 1.2em;
     color: #666;
     font-weight: 300;
+    margin-bottom: 15px;
+}
+
+.server-status {
+    margin-top: 15px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.status-badge.online {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(17, 153, 142, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
 }
 
 .hero {
@@ -61,7 +90,14 @@ h1 {
     font-size: 1.1em;
     color: #555;
     max-width: 800px;
-    margin: 0 auto 20px;
+    margin: 0 auto 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .features {
@@ -149,6 +185,11 @@ h1 {
     border-radius: 10px;
     color: white;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.info-item:hover {
+    transform: scale(1.05);
 }
 
 .info-item h3 {
@@ -159,6 +200,73 @@ h1 {
 .info-item p {
     font-size: 1.1em;
     opacity: 0.9;
+}
+
+.links-section {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.links-section h2 {
+    color: #764ba2;
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.link-card {
+    background: linear-gradient(135deg, #f093fb 0%, #4facfe 100%);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
+    display: block;
+}
+
+.link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(79, 172, 254, 0.5);
+}
+
+.link-icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.link-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.link-card p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    opacity: 0.95;
+    line-height: 1.5;
+}
+
+.link-url {
+    display: inline-block;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    backdrop-filter: blur(10px);
 }
 
 .cta {
@@ -176,10 +284,22 @@ h1 {
     margin-bottom: 20px;
 }
 
+.cta-description {
+    margin-bottom: 30px;
+    color: #666;
+    font-size: 1.1em;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .btn {
     display: inline-block;
     padding: 15px 40px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     text-decoration: none;
     border-radius: 50px;
@@ -189,37 +309,45 @@ h1 {
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
 }
 
-.btn:hover {
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
 }
 
-.btn-discord {
+.btn-secondary {
     background: linear-gradient(135deg, #f093fb 0%, #4facfe 100%);
     box-shadow: 0 4px 15px rgba(240, 147, 251, 0.4);
 }
 
-.btn-discord:hover {
+.btn-secondary:hover {
+    transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(240, 147, 251, 0.6);
 }
 
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 30px 20px;
     color: rgba(255, 255, 255, 0.9);
     margin-top: 30px;
 }
 
 footer p {
-    margin-top: 10px;
-    font-size: 0.9em;
-    opacity: 0.8;
+    margin: 10px 0;
 }
 
-.cta-description {
-    margin-bottom: 30px;
-    color: #666;
+.footer-tagline {
     font-size: 1.1em;
+    font-weight: bold;
+    opacity: 0.95 !important;
+}
+
+.footer-hosting {
+    font-size: 0.9em;
+    opacity: 0.8;
 }
 
 @media (max-width: 768px) {
@@ -237,6 +365,21 @@ footer p {
 
     .info-grid {
         grid-template-columns: 1fr;
+    }
+
+    .links-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons,
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
@@ -263,4 +406,3 @@ footer p {
         background-position: 0% 50%;
     }
 }
-
