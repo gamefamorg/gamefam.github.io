@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
     min-height: 100vh;
     color: #333;
     line-height: 1.6;
@@ -501,10 +501,10 @@ footer p {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
+    z-index: -2; /* Giảm z-index xuống -2 để chừa khoảng trống -1 cho canvas */
+    background: linear-gradient(-45deg, #0b0710, #1a0b2e, #0f172a, #050510);
     background-size: 400% 400%;
-    animation: gradientShift 15s ease infinite;
+    animation: gradientShift 20s ease infinite;
 }
 
 @keyframes gradientShift {
